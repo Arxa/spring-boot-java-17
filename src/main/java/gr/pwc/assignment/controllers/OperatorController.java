@@ -1,11 +1,10 @@
 package gr.pwc.assignment.controllers;
 
 
-import gr.pwc.assignment.entities.Operator;
 import gr.pwc.assignment.models.OperatorRequest;
+import gr.pwc.assignment.models.OperatorResponse;
 import gr.pwc.assignment.services.OperatorService;
 import jakarta.validation.Valid;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
@@ -30,7 +28,7 @@ public class OperatorController {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/add")
-    public ResponseEntity<Operator> addOperator(@Valid @RequestBody OperatorRequest operatorRequest) {
+    public ResponseEntity<OperatorResponse> addOperator(@Valid @RequestBody OperatorRequest operatorRequest) {
         return ResponseEntity.ok(operatorService.addOperator(operatorRequest));
     }
 
@@ -38,7 +36,7 @@ public class OperatorController {
     @DeleteMapping("/{id}/remove")
     public ResponseEntity<String> removeOperator(@PathVariable("id") UUID operatorId) {
         operatorService.removeOperator(operatorId);
-        return ResponseEntity.ok("DELETED");
+        return ResponseEntity.ok("OPERATOR REMOVED");
     }
 
 }

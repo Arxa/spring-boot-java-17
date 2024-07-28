@@ -33,13 +33,14 @@ public class OperatorHistory {
     @Column(name = "id", columnDefinition = "BINARY(16)")
     private UUID id;
 
-    @ManyToOne
-    @JoinColumn(name = "request_operator_id", nullable = false)
-    private Operator requestOperator;
+    @Column(name = "requester_operator_username", nullable = false)
+    private String requesterOperatorUsername;
 
-    @ManyToOne
-    @JoinColumn(name = "target_operator_id", nullable = false)
-    private Operator targetOperator;
+    @Column(name = "targeted_operator_username", nullable = false)
+    private String targetedOperatorUsername;
+
+    @Column(name = "targeted_operator_role", nullable = false)
+    private String targetedOperatorRole;
 
     @Enumerated(STRING)
     @Column(nullable = false)

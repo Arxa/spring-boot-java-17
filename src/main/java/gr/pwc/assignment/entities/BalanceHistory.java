@@ -34,13 +34,11 @@ public class BalanceHistory {
     @Column(name = "id", columnDefinition = "BINARY(16)")
     private UUID id;
 
-    @ManyToOne
-    @JoinColumn(name = "target_user_id", nullable = false)
-    private User user;
+    @Column(name = "requester_operator_username", nullable = false)
+    private String requesterOperatorUsername;
 
-    @ManyToOne
-    @JoinColumn(name = "request_operator_id", nullable = false)
-    private Operator operator;
+    @Column(name = "targeted_user_name", nullable = false)
+    private String targetedUserName;
 
     @Enumerated(STRING)
     @Column(nullable = false)

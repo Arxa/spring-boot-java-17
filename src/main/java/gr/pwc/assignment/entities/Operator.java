@@ -43,7 +43,7 @@ public class Operator {
     @Column(nullable = false, name = "password")
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "operator_roles",
             joinColumns = @JoinColumn(name = "operator_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")

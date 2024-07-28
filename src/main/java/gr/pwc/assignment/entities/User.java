@@ -20,30 +20,30 @@ public class User {
 
     @Id
     @Column(name = "user_id", columnDefinition = "BINARY(16)")
-    public UUID userId;
+    private UUID userId;
 
     @Column(nullable = false, name = "name")
-    public String name;
+    private String name;
 
     @Column(nullable = false, name = "vat")
-    public Long vat;
+    private Long vat;
 
     @Column(nullable = false, name = "counter_id")
-    public Long counterId;
+    private Long counterId;
 
     @Column(nullable = false, name = "address")
-    public String address;
+    private String address;
 
     @Column(nullable = false, name = "post_code")
-    public String postCode;
+    private String postCode;
 
     @Column(nullable = false, name = "phone")
-    public String phone;
+    private String phone;
 
     @Column(nullable = false, name = "date_of_birth")
-    public String dateOfBirth;
+    private String dateOfBirth;
 
     @Column(nullable = false, name = "balance")
-    public Long balance;
+    private Long balance;
 
 }

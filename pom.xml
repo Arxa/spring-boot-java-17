@@ -8,11 +8,11 @@
 		<version>3.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>gr.pwc</groupId>
-	<artifactId>techassignment</artifactId>
+	<groupId>app</groupId>
+	<artifactId>springboot-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Technical Assignment </name>
-	<description>Technical assignment</description>
+	<name>Spring Boot App</name>
+	<description>Spring Boot App</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
